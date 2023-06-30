@@ -42,7 +42,7 @@ function gpr() {
     git push -u origin $branch_name
 }
 # alias gcobranch="gco \`git branch -a | fzf\`" # simpler version of gcobranch
-gcobranch() {
+function gcobranch() {
   # Get the most recent branches with checkout time and swap the positions
   local recent_branches=$(git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'checkout:' | grep -oE '[^ ]+ ~ .*' | awk -F~ '!seen[$1]++' | awk -F' ~ HEAD@{' '{printf("%s ~ %s\n", substr($2, 1, length($2)-1), $1)}' | awk -F' ~ ' '{printf("%s ~ (%s)\n", $2, $1)}')
 
