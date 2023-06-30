@@ -1,7 +1,6 @@
 echo "loading bash_profile"
 export "PATH=/opt/homebrew/bin/:$PATH"
 . ~/.nvm/nvm.sh
-. /Users/wh/Documents/code/scripts/dumpdb.sh
 
 # path to code directory on CEA laptop
 export CODE_PATH="~/Documents/code"
